@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "7309b9d2e4518ad52988e780a875afc0",
+    "content-hash": "ae5390579429ace0af175cfc7baa5f80",
     "packages": [
         {
             "name": "bower-asset/bootstrap",
@@ -1252,6 +1252,41 @@
                 }
             ],
             "time": "2025-04-25T09:37:31+00:00"
+        },
+        {
+            "name": "tebe/yii2-inertia",
+            "version": "v1.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/tbreuss/yii2-inertia.git",
+                "reference": "776714d496049d512c5c25220326bd8cfa1280e0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/tbreuss/yii2-inertia/zipball/776714d496049d512c5c25220326bd8cfa1280e0",
+                "reference": "776714d496049d512c5c25220326bd8cfa1280e0",
+                "shasum": ""
+            },
+            "require": {
+                "ext-json": "*",
+                "php": ">=5.6.0"
+            },
+            "type": "yii2-extension",
+            "autoload": {
+                "psr-4": {
+                    "tebe\\inertia\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "The Yii 2 adapter for Inertia.js",
+            "support": {
+                "issues": "https://github.com/tbreuss/yii2-inertia/issues",
+                "source": "https://github.com/tbreuss/yii2-inertia/tree/v1.1.1"
+            },
+            "time": "2025-03-20T20:30:32+00:00"
         },
         {
             "name": "yiisoft/yii2",

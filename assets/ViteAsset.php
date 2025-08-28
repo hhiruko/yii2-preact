@@ -34,15 +34,15 @@ class ViteAsset extends AssetBundle
         }
     }
 
-    public static function initReact()
+    public static function initReact(): string
     {
         return '
             <script type="module">
                 import RefreshRuntime from \'http://localhost:5173/@react-refresh\'
-                  RefreshRuntime.injectIntoGlobalHook(window)
-                  window.$RefreshReg$ = () => {}
-                  window.$RefreshSig$ = () => (type) => type
-                  window.__vite_plugin_react_preamble_installed__ = true
+                RefreshRuntime.injectIntoGlobalHook(window)
+                window.$RefreshReg$ = () => {}
+                window.$RefreshSig$ = () => (type) => type
+                window.__vite_plugin_react_preamble_installed__ = true
             </script>
         ';
     }

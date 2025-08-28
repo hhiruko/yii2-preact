@@ -1,9 +1,8 @@
 import 'vite/modulepreload-polyfill'
 import { createInertiaApp } from '@inertiajs/react'
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import './vite/index.css'
-import App from './vite/App.jsx'
+import { StrictMode } from 'preact/compat'
+import { createRoot} from 'react-dom/client';
+import './web/css/index.css'
 
 createInertiaApp({
     id: 'root',

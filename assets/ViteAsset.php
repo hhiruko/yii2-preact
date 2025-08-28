@@ -27,10 +27,20 @@ class ViteAsset extends AssetBundle
             $this->js[] = 'http://localhost:5173/main.jsx';
         } else {
             // Production build
+            $manifestPath = \Yii::getAlias('@webroot/dist/manifest.json');
+            $manifest = json_decode(file_get_contents($manifestPath), true);
+
+            $entry = $manifest['main.jsx'];
+
             $this->basePath = '@webroot/dist';
             $this->baseUrl = '@web/dist';
-            $this->js[] = 'main.js';
-            $this->css[] = 'style.css';
+
+            $this->js[] = $entry['file'];
+            if (!empty($entry['css'])) {
+                foreach ($entry['css'] as $cssFile) {
+                    $this->css[] = $cssFile;
+                }
+            }
         }
     }
 
@@ -38,8 +48,8 @@ class ViteAsset extends AssetBundle
     {
         return '
             <script type="module">
-                import RefreshRuntime from \'http://localhost:5173/@react-refresh\'
-                RefreshRuntime.injectIntoGlobalHook(window)
+//                import RefreshRuntime from \'http://localhost:5173/@react-refresh\'
+//                RefreshRuntime.injectIntoGlobalHook(window)
                 window.$RefreshReg$ = () => {}
                 window.$RefreshSig$ = () => (type) => type
                 window.__vite_plugin_react_preamble_installed__ = true

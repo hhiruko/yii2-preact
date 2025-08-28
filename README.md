@@ -47,4 +47,10 @@ php yii serve
 npm run dev
 ```
 
-There is no need to run a dedicated frontend server on a production server. Build the assets, and they will be served via your backend server.
+### 4. Update `.env` file:
+```
+BACKEND_URL=http://localhost:8080
+FRONTEND_URL=http://localhost:5174
+```
+
+There is no need to run a dedicated frontend server on a production server. Build the assets, and they will be served via your backend server. Therefore, on a production server you only need to set `BACKEND_URL` in `.env` file.

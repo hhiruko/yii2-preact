@@ -24,7 +24,7 @@ class ViteAsset extends AssetBundle
 
         if (YII_ENV_DEV) {
             // Vite dev server
-            $viteServer = Yii::$app->params['viteServer'];
+            $viteServer = $_ENV['FRONTEND_URL'];
 
             $this->js[] = $viteServer . '/@vite/client';
             $this->js[] = $viteServer . '/main.jsx';

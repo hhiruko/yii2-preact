@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace app\assets;
 
+use Yii;
 use yii\web\AssetBundle;
 
 class ViteAsset extends AssetBundle
@@ -23,8 +24,10 @@ class ViteAsset extends AssetBundle
 
         if (YII_ENV_DEV) {
             // Vite dev server
-            $this->js[] = 'http://localhost:5173/@vite/client';
-            $this->js[] = 'http://localhost:5173/main.jsx';
+            $viteServer = Yii::$app->params['viteServer'];
+
+            $this->js[] = $viteServer . '/@vite/client';
+            $this->js[] = $viteServer . '/main.jsx';
         } else {
             // Production build
             $manifestPath = \Yii::getAlias('@webroot/dist/.vite/manifest.json');

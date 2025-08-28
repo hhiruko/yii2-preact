@@ -27,7 +27,7 @@ class ViteAsset extends AssetBundle
             $this->js[] = 'http://localhost:5173/main.jsx';
         } else {
             // Production build
-            $manifestPath = \Yii::getAlias('@webroot/dist/manifest.json');
+            $manifestPath = \Yii::getAlias('@webroot/dist/.vite/manifest.json');
             $manifest = json_decode(file_get_contents($manifestPath), true);
 
             $entry = $manifest['main.jsx'];
@@ -42,18 +42,5 @@ class ViteAsset extends AssetBundle
                 }
             }
         }
-    }
-
-    public static function initReact(): string
-    {
-        return '
-            <script type="module">
-//                import RefreshRuntime from \'http://localhost:5173/@react-refresh\'
-//                RefreshRuntime.injectIntoGlobalHook(window)
-                window.$RefreshReg$ = () => {}
-                window.$RefreshSig$ = () => (type) => type
-                window.__vite_plugin_react_preamble_installed__ = true
-            </script>
-        ';
     }
 }
